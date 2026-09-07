@@ -1,0 +1,24 @@
+{
+  "name": "time4a-timer",
+  "version": "1.0.0",
+  "description": "A minimal desktop timer app with a pixel-art twist - built with Electron, it displays an animated pixel sprite that shifts every few seconds as the countdown runs.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiabeltr/time4a-timer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/claudiabeltr/time4a-timer/issues"
+  },
+  "homepage": "https://github.com/claudiabeltr/time4a-timer#readme",
+  "devDependencies": {
+    "electron": "^44.2.0"
+  }
+}
