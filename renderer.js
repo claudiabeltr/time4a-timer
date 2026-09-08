@@ -1,0 +1,4 @@
+const STEP_SECONDS = 10;
+const MAX_SECONDS = 99*3600;
+const MIN_SECONDS = 0;
+
