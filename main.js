@@ -17,6 +17,7 @@ function createWindow() {
     });
 
     win.loadFile('index.html'); // load html file
+    //win.webContents.openDevTools({ mode: 'detached' });
 }
 
 app.whenReady().then(createWindow);
@@ -24,5 +25,3 @@ app.whenReady().then(createWindow);
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit();
 });
-
-win.loadFile('index.html');
