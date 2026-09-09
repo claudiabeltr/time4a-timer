@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+body {
+    -webkit-app-region: drag;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    overflow: hidden;
+}
+/* ---- SPRITE ---- */
+/* 320x192px: grid 5 cols x 3 rows (64x64 per frame)
+- Frame 1: idle.
+- Frames 2-8 running (7).
+- Frames 9-11 alarm (3) */
+#sprite {
+    width: 128px;
+    height: 128px;
+    image-rendering: pixelated;
+    background-repeat: no-repeat;
+    background-image: url('assets/old-clock.png');
+    background-size: 640px 384px; /* scaled */
+    flex-shrink: 0;
+}
+
+#sprite.idle {
+    background-position: 0.0; /* frame 1 */
+}
+
+#sprite.running {
+    animation: run-cycle 1.2 infinite;
+}
+@keyframes run-cycle {
+    0% { background-position: -128px 0; animation-timing-function: steps(1);}
+    14.28% { background-position: -256px 0; animation-timing-function: steps(1);}
+    28.57% { background-position: -384px 0; animation-timing-function: steps(1);}
+    42.85% { background-position: -512px 0; animation-timing-function: steps(1);}
+    57.14% { background-position: 0 -128px; animation-timing-function: steps(1);}
+    71.42% { background-position: -128px -128px; animation-timing-function: steps(1);}
+    85.71% { background-position: -256px -128px; animation-timing-function: steps(1);}
+    100% { background-position: -128px 0; animation-timing-function: steps(1);}
+}
+
+#sprite.alarm {
+    animation: alarm-cycle 0.6 infinite;
+}
+
+@keyframes alarm-cycle {
+    0% { background-position: 0 -256px; animation-timing-function: steps(1); }
+    33.33% { background-position: -128px -256px; animation-timing-function: steps(1); }
+    66.66% { background-position: -256px -256px; animation-timing-function: steps(1); }
+    100% { background-position: 0 -256px; }
+}
+
+/* ---- TIMER ROW (- / display / +) --- */
+#timer-row {
+    -webkit-app-region: no-drag;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ---- BUTTONS ---- */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 14px;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
