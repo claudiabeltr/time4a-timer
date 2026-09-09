@@ -4,7 +4,7 @@ A minimal desktop timer app with a pixel-art twist - built with Electron, it dis
 ## Roadmap
 
 ### Phase 0:
-- [ ] Initial pixel-art timer design
+- [x] Initial pixel-art timer design
 - [x] Github repository created
 - [x] Base Electron project structure
 
