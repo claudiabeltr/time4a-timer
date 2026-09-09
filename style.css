@@ -28,7 +28,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 2px;
     transform-origin: center;
 }
 
@@ -82,7 +82,7 @@ body {
     -webkit-app-region: no-drag;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 1px;
 }
 
 /* ---- MAIN CONTROLS ---- */
@@ -90,20 +90,19 @@ body {
     -webkit-app-region: no-drag;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 3px;
 }
 
 /* ---- BUTTONS ---- */
 button {
     cursor: pointer;
     border: none;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
+    background: transparent;
+    color: black;
     padding: 4px 10px;
     font-size: 14px;
 }
 
 button:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: transparent;
 }
