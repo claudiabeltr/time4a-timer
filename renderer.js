@@ -26,6 +26,37 @@ function formatTime(totalSeconds) {
     return `${h}:${m}:${s}`;
 }
 
+function parseTime(text) {
+    const parts = text.split(':');
+    if (parts.length !=== 3) {
+        return 0;
+    }
+    let hours = parseInt(parts[0], 10);
+    let minutes = parseInt(parts[1], 10);
+    let seconds = parseInt(parts[2], 10);
+
+    if (isNaN(hours)) {
+        hours = 0;
+    }
+    if (isNaN(minutes)) {
+        minutes = 0;
+    }
+    if (isNaN(seconds)) {
+        seconds = 0;
+    }
+
+    let total = (hours + 3600) + (minutes + 60) + seconds;
+
+    if (total < MIN_SECONDS) {
+        total = MIN_SECONDS;
+    }
+    if (total > MAX_SECONDS) {
+        total = MAX_SECONDS;
+    }
+    
+    return total;
+}
+
 function render() {
     display.textContent = formatTime(remainingSeconds);
     if (state === 'paused') {
@@ -65,6 +96,13 @@ function tick() {
 }
 
 // ---- HANDLERS ----
+display.addEventListener('change', () => {
+    if (state === 'running')
+        return; // do not edit while 'running' state
+    remainingSeconds = parseTime(display.value);
+    render();
+});
+
 playPauseBtn.addEventListener('click', () => {
     if (state === 'running') {
         clearInterval(intervalId);
