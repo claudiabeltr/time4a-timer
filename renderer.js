@@ -2,8 +2,10 @@
 const STEP_SECONDS = 10; // amount +/-
 const MAX_SECONDS = 99*3600; // cap: 99 hours
 const MIN_SECONDS = 0;
+const BASE_WIDTH = 220;
 
 // ---- DOM REFERENCES ----
+const appEl = document.getElementById('app');
 const sprite = document.getElementById('sprite');
 const display = document.getElementById('display');
 const playPauseBtn = document.getElementById('play-pause');
@@ -37,6 +39,14 @@ function render() {
         playPauseBtn.textContent = '▶';
     }
 }
+
+// ---- SCALING ----
+function updateScale() {
+    const scale = window.innerWidth / BASE_WIDTH;
+    appEl.style.transform = `scale(${scale})`;
+}
+
+window.addEventListener('resize', updateScale);
 
 // ---- TICK ----
 function tick() {
@@ -91,3 +101,4 @@ plusBtn.addEventListener('click', () => {
 
 // ---- INIT ----
 render();
+updateScale();

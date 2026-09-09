@@ -16,6 +16,8 @@ function createWindow() {
         maxHeight: 460,
     });
 
+    win.setAspectRatio(220 / 260);
+
     win.loadFile('index.html'); // load html file
     //win.webContents.openDevTools({ mode: 'detached' });
 }
