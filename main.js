@@ -10,7 +10,7 @@ function createWindow() {
         transparent: true,
         alwaysOnTop: true,
         resizable: true,
-        minWidth150,
+        minWidth: 150,
         minHeight: 180,
         maxWidth: 400,
         maxHeight: 460,
@@ -24,3 +24,5 @@ app.whenReady().then(createWindow);
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit();
 });
+
+win.loadFile('index.html');
