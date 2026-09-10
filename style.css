@@ -79,14 +79,12 @@ body {
 
 /* ---- TIMER ROW (- / display / +) --- */
 .display {
-    font-size: 18px;
+    font-size: 9px;
     color: black;
-    text-shadow: 1px 1px 2px #000;
     background: transparent;
     border: none;
     text-align: center;
-    width: 80px;
-    font-family: monospace;
+    width: 70px;
 }
 
 .display:focus {

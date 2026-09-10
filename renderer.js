@@ -28,7 +28,7 @@ function formatTime(totalSeconds) {
 
 function parseTime(text) {
     const parts = text.split(':');
-    if (parts.length !=== 3) {
+    if (parts.length !== 3) {
         return 0;
     }
     let hours = parseInt(parts[0], 10);
@@ -45,7 +45,7 @@ function parseTime(text) {
         seconds = 0;
     }
 
-    let total = (hours + 3600) + (minutes + 60) + seconds;
+    let total = (hours * 3600) + (minutes * 60) + seconds;
 
     if (total < MIN_SECONDS) {
         total = MIN_SECONDS;
@@ -53,12 +53,12 @@ function parseTime(text) {
     if (total > MAX_SECONDS) {
         total = MAX_SECONDS;
     }
-    
+
     return total;
 }
 
 function render() {
-    display.textContent = formatTime(remainingSeconds);
+    display.value = formatTime(remainingSeconds);
     if (state === 'paused') {
         sprite.className = 'idle';
     } else {
