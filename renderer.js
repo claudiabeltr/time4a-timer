@@ -137,6 +137,35 @@ plusBtn.addEventListener('click', () => {
     render();
 });
 
+// ---- SKINS ----
+const skins = ['old-clock', 'breakfast-time'];
+let currentSkinIndex = 0;
+
+const prevSkinBtn = document.getElementById('prev-skin');
+const nextSkinBtn = document.getElementById('next-skin');
+
+function applySkin() {
+    const skinName = skins[currentSkinIndex];
+    sprite.style.setProperty('--skin-image', `url('assets/${skinName}.png')`);
+}
+
+prevSkinBtn.addEventListener('click', () => {
+    currentSkinIndex = currentSkinIndex - 1;
+    if (currentSkinIndex < 0) {
+        currentSkinIndex = skins.length - 1;
+    }
+    applySkin();
+});
+
+nextSkinBtn.addEventListener('click', () => {
+    currentSkinIndex = currentSkinIndex + 1;
+    if (currentSkinIndex >= skins.length) {
+        currentSkinIndex = 0; // vuelve al primero
+    }
+    applySkin();
+});
+
 // ---- INIT ----
 render();
 updateScale();
+applySkin();
