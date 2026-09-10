@@ -12,7 +12,7 @@ html, body {
 }
 
 body {
-    -webkit-app-region: drag;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,6 +45,7 @@ body {
 - Frames 2-8 running (7).
 - Frames 9-11 alarm (3) */
 #sprite {
+    -webkit-app-region: drag;
     width: 128px;
     height: 128px;
     image-rendering: pixelated;
@@ -126,4 +127,11 @@ button {
 
 button:hover {
     background: transparent;
+}
+
+#exit {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    z-index: 10;
 }

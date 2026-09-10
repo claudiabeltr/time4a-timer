@@ -12,6 +12,7 @@ const playPauseBtn = document.getElementById('play-pause');
 const stopBtn = document.getElementById('stop')
 const minusBtn = document.getElementById('minus');
 const plusBtn = document.getElementById('plus');
+const exitBtn = document.getElementById('exit');
 
 // ---- STATE ----
 let remainingSeconds = 0;
@@ -136,6 +137,10 @@ plusBtn.addEventListener('click', () => {
     remainingSeconds = Math.min(MAX_SECONDS, remainingSeconds + STEP_SECONDS);
     render();
 });
+
+exitBtn.addEventListener('click', () => {
+    window.close();
+})
 
 // ---- SKINS ----
 const skins = ['old-clock', 'breakfast-time'];
