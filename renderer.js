@@ -143,7 +143,7 @@ exitBtn.addEventListener('click', () => {
 })
 
 // ---- SKINS ----
-const skins = ['old-clock', 'breakfast-time', 'growing-plant'];
+const skins = ['old-clock', 'breakfast-time', 'growing-plant', 'calendar'];
 let currentSkinIndex = 0;
 
 const prevSkinBtn = document.getElementById('prev-skin');
