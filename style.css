@@ -50,7 +50,7 @@ body {
     height: 128px;
     image-rendering: pixelated;
     background-repeat: no-repeat;
-    background-image: var(--skin-image, url('assets/old-clock.png'));
+    background-image: var(--skin-image, url('assets/default-timer.png'));
     background-size: 640px 384px; /* scaled */
     flex-shrink: 0;
 }
