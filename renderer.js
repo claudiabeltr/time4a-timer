@@ -143,7 +143,7 @@ exitBtn.addEventListener('click', () => {
 })
 
 // ---- SKINS ----
-const skins = ['default-timer', 'banana-breakfast', 'blueberry-breakfast'];
+const skins = ['default-timer', 'banana-breakfast', 'blueberry-breakfast', 'strawberry-breakfast', 'burning-candle'];
 let currentSkinIndex = 0;
 
 const prevSkinBtn = document.getElementById('prev-skin');
