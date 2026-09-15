@@ -155,7 +155,7 @@ newTimerBtn.addEventListener('click', () => {
 });
 
 // ---- SKINS ----
-const skins = ['default-timer', 'banana-breakfast', 'blueberry-breakfast', 'strawberry-breakfast', 'burning-candle', 'growing-plant', 'calendar'];
+const skins = ['default-timer', 'banana-breakfast', 'blueberry-breakfast', 'strawberry-breakfast', 'burning-candle', 'growing-plant', 'calendar', 'tidy-postits'];
 let currentSkinIndex = 0;
 
 const prevSkinBtn = document.getElementById('prev-skin');
