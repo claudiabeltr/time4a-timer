@@ -1,9 +1,9 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow, ipcMain, shell } = require('electron')
 
 let windows = []; // !save window ref. (NOW array for multiple windows)
 
 function createWindow() {
-    win = new BrowserWindow({
+    const win = new BrowserWindow({
         width: 220,
         height: 260,
         minWidth: 150,
@@ -43,4 +43,8 @@ app.on('activate', () => {
 
 ipcMain.on('create-timer', () => {
     createWindow();
+});
+
+ipcMain.on('open-help', () => {
+    shell.openExternal('https://github.com/claudiabeltr/time4a-timer/blob/main/README.md');
 });

@@ -10,6 +10,7 @@ const sprite = document.getElementById('sprite');
 const display = document.getElementById('display');
 const playPauseBtn = document.getElementById('play-pause');
 const stopBtn = document.getElementById('stop')
+const helpBtn = document.getElementById('help');
 const minusBtn = document.getElementById('minus');
 const plusBtn = document.getElementById('plus');
 const exitBtn = document.getElementById('exit');
@@ -68,8 +69,10 @@ function render() {
     }
     if (state === 'running') {
         playPauseBtn.textContent = '⏸';
+        playPauseBtn.title = 'Pause';
     } else {
         playPauseBtn.textContent = '▶';
+        playPauseBtn.title = 'Play';
     }
 }
 
@@ -127,6 +130,10 @@ stopBtn.addEventListener('click', () => {
     remainingSeconds = 0;
     state = 'idle';
     render();
+});
+
+helpBtn.addEventListener('click', () => {
+    window.electronAPI.openHelp();
 });
 
 minusBtn.addEventListener('click', () => {
