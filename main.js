@@ -12,12 +12,15 @@ function createWindow() {
         maxHeight: 460,
         frame: false,
         transparent: true,
-        alwaysOnTop: true,
+        //alwaysOnTop: true,
         resizable: true,
         webPreferences: {
             preload: `${__dirname}/preload.js`
         }
     });
+
+    win.on('blur', () => win.setAlwaysOnTop(false)); // sticky widget
+    win.on('focus', () => win.setAlwaysOnTop(true));
 
     win.setAspectRatio(220 / 260);
 
