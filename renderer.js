@@ -13,6 +13,7 @@ const stopBtn = document.getElementById('stop')
 const minusBtn = document.getElementById('minus');
 const plusBtn = document.getElementById('plus');
 const exitBtn = document.getElementById('exit');
+const newTimerBtn = document.getElementById('new-timer');
 
 // ---- STATE ----
 let remainingSeconds = 0;
@@ -141,6 +142,10 @@ plusBtn.addEventListener('click', () => {
 exitBtn.addEventListener('click', () => {
     window.close();
 })
+
+newTimerBtn.addEventListener('click', () => {
+    window.electronAPI.newTimer();
+});
 
 // ---- SKINS ----
 const skins = ['default-timer', 'banana-breakfast', 'blueberry-breakfast', 'strawberry-breakfast', 'burning-candle', 'growing-plant', 'calendar'];

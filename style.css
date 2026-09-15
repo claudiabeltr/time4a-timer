@@ -129,9 +129,17 @@ button:hover {
     background: transparent;
 }
 
+#new-timer {
+    position: absolute;
+    top: 5px;
+    right: 26px;
+    z-index: 10;
+    font-size: 17px;
+}
+
 #exit {
     position: absolute;
-    top: 30px;
-    right: 20px;
+    top: 6px;
+    right: 6px;
     z-index: 10;
 }
