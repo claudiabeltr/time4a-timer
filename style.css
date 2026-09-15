@@ -143,3 +143,29 @@ button:hover {
     right: 6px;
     z-index: 10;
 }
+
+/* ---- HOVER TO REVEAL CONTROLS ---- */
+#prev-skin,
+#next-skin,
+#minus,
+#plus,
+#help,
+#play-pause,
+#stop,
+#exit,
+#new-timer {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+body:hover #prev-skin,
+body:hover #next-skin,
+body:hover #minus,
+body:hover #plus,
+body:hover #help,
+body:hover #play-pause,
+body:hover #stop,
+body:hover #exit,
+body:hover #new-timer {
+    opacity: 1;
+}
