@@ -14,6 +14,7 @@ function createWindow() {
         transparent: true,
         //alwaysOnTop: true,
         resizable: true,
+        icon: `${__dirname}/assets/icon-256.png`,
         webPreferences: {
             preload: `${__dirname}/preload.js`
         }
